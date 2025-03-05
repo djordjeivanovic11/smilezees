@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+:root {
+  --primary-text: #222222;
+  --primary-bg: #e5daf8;
+  --white : #f9f7ff;
+  --accent: #372d6d;
+  --font-display: "Giaza", serif;
+  --font-body: "Playfair Display", serif;
+}
+
+body {
+  color: var(--primary-text);
+  accent-color: var(--accent);
+  background: var(--primary-bg);
+  font-family: var(--font-body), serif;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display), serif;
+}
+
+a {
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--accent);
+}

@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
+import Header from "@/components/Layout/Header";
+import Footer from "@/components/Layout/Footer";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Smilezees - The Smile You Deserve",
-  description: "the smile you deserve at the fraction of the cost",
-};
+import { ReactNode } from "react";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="font-body bg-primaryBg text-primaryText antialiased">
-        {children}
+      <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

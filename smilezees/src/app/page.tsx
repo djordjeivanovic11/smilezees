@@ -1,7 +1,19 @@
+import Hero from "@/components/Main/Hero";
+import WhyUs from "@/components/Main/WhyUs";
+import Offer from "@/components/Main/Offer";
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-primaryBg text-primaryText font-display text-4xl">
-      Hello, Smilezees!
-    </div>
+    <>
+      <div className="w-screen min-h-screen">
+        <Hero />
+      </div>
+      <div className="w-screen min-h-screen">
+        <WhyUs />
+      </div>
+      <div className="w-screen min-h-screen">
+        <Offer />
+      </div>
+    </>
   );
 }

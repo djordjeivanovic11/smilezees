@@ -6,6 +6,7 @@ module.exports = {
           primaryText: "#222222", 
           primaryBg: "#f3effa", 
           accent: "#372d6d", 
+          lila: "#e5daf8"
         },
         fontFamily: {
           display: ["Giaza", "serif"], 
