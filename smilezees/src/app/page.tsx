@@ -1,19 +1,51 @@
+"use client";
+import { useState, useEffect } from "react";
 import Hero from "@/components/Main/Hero";
 import WhyUs from "@/components/Main/WhyUs";
-import Offer from "@/components/Main/Offer";
+import ClinicsCTA from "@/components/Main/Clinics/ClinicsCTA";
+import CTA from "@/components/Main/CTA";
+import FreeQuote from "@/components/Main/FreeQuote";
+import DiscountPopup from "@/components/Main/Popup";
+import HowItWorks from "@/components/Main/HIW";
 
 export default function Home() {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  useEffect(() => {
+    const popupDismissed = localStorage.getItem("popupDismissed");
+    if (!popupDismissed) {
+      setIsPopupVisible(true);
+    }
+  }, []);
+
+  const handlePopupClose = () => {
+    localStorage.setItem("popupDismissed", "true");
+    setIsPopupVisible(false);
+  };
+
   return (
     <>
-      <div className="w-screen min-h-screen">
+      <div>
         <Hero />
       </div>
-      <div className="w-screen min-h-screen">
+      <div>
         <WhyUs />
       </div>
-      <div className="w-screen min-h-screen">
-        <Offer />
+      <div>
+        <FreeQuote />
       </div>
+      <div>
+        <HowItWorks />
+      </div>
+      <div>
+        <ClinicsCTA />
+      </div>
+      <div>
+        <CTA />
+      </div>
+      {isPopupVisible && (
+        <DiscountPopup show={true} handleClose={handlePopupClose} />
+      )}
     </>
   );
 }
